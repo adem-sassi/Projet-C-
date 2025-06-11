@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sassi\\Desktop\\projet-cs\\BooksAPI\\BooksAPI.csproj": {}
+    "C:\\Users\\sassi\\Desktop\\projet-c-\\BooksAPI\\BooksAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sassi\\Desktop\\projet-cs\\BooksAPI\\BooksAPI.csproj": {
+    "C:\\Users\\sassi\\Desktop\\projet-c-\\BooksAPI\\BooksAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sassi\\Desktop\\projet-cs\\BooksAPI\\BooksAPI.csproj",
+        "projectUniqueName": "C:\\Users\\sassi\\Desktop\\projet-c-\\BooksAPI\\BooksAPI.csproj",
         "projectName": "BooksAPI",
-        "projectPath": "C:\\Users\\sassi\\Desktop\\projet-cs\\BooksAPI\\BooksAPI.csproj",
+        "projectPath": "C:\\Users\\sassi\\Desktop\\projet-c-\\BooksAPI\\BooksAPI.csproj",
         "packagesPath": "C:\\Users\\sassi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sassi\\Desktop\\projet-cs\\BooksAPI\\obj\\",
+        "outputPath": "C:\\Users\\sassi\\Desktop\\projet-c-\\BooksAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sassi\\AppData\\Roaming\\NuGet\\NuGet.Config"

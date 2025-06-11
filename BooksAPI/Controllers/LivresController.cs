@@ -16,43 +16,41 @@ namespace BooksAPI.Controllers
             _repo = repo;
         }
 
-        // GET /livres
-  [HttpGet]
-public async Task<IActionResult> GetAll(
-    [FromQuery] string? author,
-    [FromQuery] string? title,
-    [FromQuery] string? sort)
-{
-    var query = _repo.Query();
+        // recupere tout les livres, avec option de filtrer et trier
+        [HttpGet]
+        public async Task<IActionResult> GetAll(
+            [FromQuery] string? author,
+            [FromQuery] string? title,
+            [FromQuery] string? sort)
+        {
+            var query = _repo.Query();
 
-    if (!string.IsNullOrWhiteSpace(author))
-        query = query.Where(m => m.Author.Contains(author));
+            if (!string.IsNullOrWhiteSpace(author))
+                query = query.Where(m => m.Author.Contains(author));
 
-    if (!string.IsNullOrWhiteSpace(title))
-        query = query.Where(m => m.Title.Contains(title));
+            if (!string.IsNullOrWhiteSpace(title))
+                query = query.Where(m => m.Title.Contains(title));
 
-    if (string.Equals(sort, "author", StringComparison.OrdinalIgnoreCase))
-        query = query.OrderBy(m => m.Author);
-    else if (string.Equals(sort, "title", StringComparison.OrdinalIgnoreCase))
-        query = query.OrderBy(m => m.Title);
+            if (string.Equals(sort, "author", StringComparison.OrdinalIgnoreCase))
+                query = query.OrderBy(m => m.Author);
+            else if (string.Equals(sort, "title", StringComparison.OrdinalIgnoreCase))
+                query = query.OrderBy(m => m.Title);
 
-    var mediaList = await query.ToListAsync();
+            var mediaList = await query.ToListAsync();
 
-    var dtoList = mediaList.Select(m => new CreateMediaDto
-    {
-        Title = m.Title,
-        Author = m.Author,
-        PublishedDate = m.PublishedDate,
-        NumberOfPages = (m as PaperBook)?.NumberOfPages,
-        DownloadUrl = (m as Ebook)?.DownloadUrl
-    }).ToList();
+            var dtoList = mediaList.Select(m => new CreateMediaDto
+            {
+                Title = m.Title,
+                Author = m.Author,
+                PublishedDate = m.PublishedDate,
+                NumberOfPages = (m as PaperBook)?.NumberOfPages,
+                DownloadUrl = (m as Ebook)?.DownloadUrl
+            }).ToList();
 
-    return Ok(dtoList);
-}
+            return Ok(dtoList);
+        }
 
-
-
-        // GET /livres/{id}
+        // recupere un livre avec son id
         [HttpGet("{id:int}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -60,7 +58,7 @@ public async Task<IActionResult> GetAll(
             return item == null ? NotFound() : Ok(item);
         }
 
-        // POST /livres
+        // ajoute un nouveux livre dans la base
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateMediaDto dto)
         {
@@ -97,7 +95,7 @@ public async Task<IActionResult> GetAll(
             return CreatedAtAction(nameof(Get), new { id = created.Id }, created);
         }
 
-        // PUT /livres/{id}
+        // modifie un livre existant avec son id
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] CreateMediaDto dto)
         {
@@ -108,12 +106,10 @@ public async Task<IActionResult> GetAll(
             if (existing == null)
                 return NotFound();
 
-            // Mise à jour des champs communs
             existing.Title = dto.Title;
             existing.Author = dto.Author;
             existing.PublishedDate = dto.PublishedDate;
 
-            // Mise à jour spécifique selon le type
             if (existing is PaperBook paper)
             {
                 if (dto.NumberOfPages.HasValue)
@@ -137,7 +133,7 @@ public async Task<IActionResult> GetAll(
             return NoContent();
         }
 
-        // DELETE /livres/{id}
+        // supprime un livre par son id
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {

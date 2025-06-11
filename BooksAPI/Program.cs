@@ -5,23 +5,23 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1) Configurer EF Core / SQLite
+// config de la base de donné (sqlite)
 builder.Services.AddDbContext<BooksContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 2) Injecter le repository générique
+// injection du repo generique pour accéder au donnée
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
-// 3) Ajouter les controllers
+// ajout des controlleur pour les routes de l'api
 builder.Services.AddControllers();
 
-// 4) Swagger/OpenAPI
+// config de swagger pour voir l'api dans le navigateur
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Middleware
+// en mode dev, on montre les details des erreurs + swagger dispo
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -34,7 +34,7 @@ app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
 
-// Appliquer les migrations et créer la base si nécessaire
+// ici on applique les migration et on cree la bdd si elle existe pas
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<BooksContext>();
