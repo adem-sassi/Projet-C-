@@ -14,6 +14,6 @@ Bienvenue dans notre projet de fin de module, développé en C# avec .NET 7. Ce 
 - **Mohamed Aziz Kabissa** 
 
 ---
-
+** Vous trouverez la partie individuelle de chacun au sein des différentes branches associées avec les prénoms de chaque membre du groupe **
 
 
