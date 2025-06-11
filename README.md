@@ -1,80 +1,65 @@
-📚 BooksAPI - Projet collectif
-Développé par : Adem Sassi & Mohamed Aziz Kabissa
+
+🎯 BooksClient - Client Console
+Développé par : Adem Sassi
 Date : Juin 2025
 
-🔧 Description
-BooksAPI est une API REST développée avec ASP.NET Core 7 permettant de gérer une collection de livres numériques et papier. Elle est conçue pour permettre à un client console (BooksClient) de consulter, ajouter et manipuler des ressources bibliographiques via des requêtes HTTP.
+🧾 Description
+BooksClient est une application console développée en C# (.NET 7) permettant de consommer les services de l’API REST BooksAPI. Elle offre une interface en ligne de commande permettant aux utilisateurs d’interagir avec la bibliothèque numérique (consultation, ajout, suppression, etc.).
 
-🚀 Technologies utilisées
-ASP.NET Core 7
-
-Entity Framework Core (SQLite)
-
-Swagger / OpenAPI
+⚙️ Technologies
+.NET 7
 
 C#
 
-SQLite
+System.Net.Http.Json (pour la consommation d'API)
 
-📂 Structure du projet
+📁 Structure
 bash
 Copier
 Modifier
-BooksAPI/
-├── Controllers/            # Contrôleur principal (LivresController.cs)
-├── Data/                   # Contexte EF Core (BooksContext.cs)
-├── Models/                 # Modèles de données (Media, Ebook, PaperBook, etc.)
-├── Repositories/           # Pattern Repository (IRepository, Repository)
-├── Migrations/             # Migrations EF Core
-├── appsettings.json        # Configuration générale
-└── Program.cs              # Point d’entrée de l’API
-📌 Fonctionnalités principales
-📖 CRUD complet sur les livres (Ebooks et livres papier)
+BooksClient/
+├── Program.cs          # Point d’entrée de l’application
+├── ApiService.cs       # Classe de communication avec l’API
+├── Models.cs           # Modèles locaux alignés avec ceux de l’API
+├── *.csproj            # Fichier de projet .NET
+✅ Fonctionnalités
+🔍 Liste des livres disponibles
 
-🔎 Filtrage par type de média
+➕ Ajout de nouveaux livres
 
-💾 Base de données SQLite
+🗑️ Suppression de livres
 
-🧪 Documentation Swagger intégrée
+📝 Interaction simple via la console
 
-📥 Installation & Exécution
-Cloner le dépôt :
+▶️ Lancer l'application
+S’assurer que l’API BooksAPI est lancée.
 
-bash
-Copier
-Modifier
-git clone <url>
-Restaurer les dépendances :
+Se placer dans le dossier BooksClient :
 
 bash
 Copier
 Modifier
-dotnet restore
-Appliquer les migrations et lancer :
+cd BooksClient
+Lancer le client :
 
 bash
 Copier
 Modifier
-dotnet ef database update
 dotnet run
-Accéder à l’API via Swagger :
+🔗 Dépendances
+BooksClient utilise HttpClient et System.Text.Json pour interagir avec l’API.
 
-bash
+Assurez-vous que les endpoints de l’API sont accessibles depuis le client.
+
+🧪 Exemple d'utilisation
+markdown
 Copier
 Modifier
-http://localhost:<port>/swagger
-📤 Endpoints principaux
-Méthode	Route	Description
-GET	/api/livres	Récupérer tous les livres
-GET	/api/livres/{id}	Récupérer un livre par ID
-POST	/api/livres	Ajouter un nouveau livre
-PUT	/api/livres/{id}	Modifier un livre existant
-DELETE	/api/livres/{id}	Supprimer un livre
+Bienvenue dans la bibliothèque 📚
 
-🙌 Remarques
-Le projet suit le pattern Repository pour séparer la logique métier et les accès aux données.
+1. Voir tous les livres
+2. Ajouter un livre
+3. Supprimer un livre
+4. Quitter
 
-Tous les modèles implémentent une interface IReadable commune.
-
-Swagger est activé en mode développement uniquement.
-
+Votre choix : _
