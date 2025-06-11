@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stud\\Desktop\\git c#\\Projet-C-\\BooksAPI\\BooksAPI.csproj": {}
+    "C:\\Users\\stud\\Desktop\\final c#\\LivresAPI\\BooksClient\\BooksClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stud\\Desktop\\git c#\\Projet-C-\\BooksAPI\\BooksAPI.csproj": {
+    "C:\\Users\\stud\\Desktop\\final c#\\LivresAPI\\BooksClient\\BooksClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stud\\Desktop\\git c#\\Projet-C-\\BooksAPI\\BooksAPI.csproj",
-        "projectName": "BooksAPI",
-        "projectPath": "C:\\Users\\stud\\Desktop\\git c#\\Projet-C-\\BooksAPI\\BooksAPI.csproj",
+        "projectUniqueName": "C:\\Users\\stud\\Desktop\\final c#\\LivresAPI\\BooksClient\\BooksClient.csproj",
+        "projectName": "BooksClient",
+        "projectPath": "C:\\Users\\stud\\Desktop\\final c#\\LivresAPI\\BooksClient\\BooksClient.csproj",
         "packagesPath": "C:\\Users\\stud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stud\\Desktop\\git c#\\Projet-C-\\BooksAPI\\obj\\",
+        "outputPath": "C:\\Users\\stud\\Desktop\\final c#\\LivresAPI\\BooksClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\stud\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -20,7 +20,6 @@
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\sdk\\7.0.317\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,24 +38,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[7.0.20, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.5.0, )"
-            },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[9.0.5, )"
@@ -74,9 +55,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

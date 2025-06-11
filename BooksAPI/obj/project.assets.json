@@ -1995,24 +1995,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sassi\\.nuget\\packages\\": {}
+    "C:\\Users\\stud\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sassi\\Desktop\\projet-c-\\BooksAPI\\BooksAPI.csproj",
+      "projectUniqueName": "C:\\Users\\stud\\Desktop\\git c#\\Projet-C-\\BooksAPI\\BooksAPI.csproj",
       "projectName": "BooksAPI",
-      "projectPath": "C:\\Users\\sassi\\Desktop\\projet-c-\\BooksAPI\\BooksAPI.csproj",
-      "packagesPath": "C:\\Users\\sassi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sassi\\Desktop\\projet-c-\\BooksAPI\\obj\\",
+      "projectPath": "C:\\Users\\stud\\Desktop\\git c#\\Projet-C-\\BooksAPI\\BooksAPI.csproj",
+      "packagesPath": "C:\\Users\\stud\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\stud\\Desktop\\git c#\\Projet-C-\\BooksAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\stud\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files\\dotnet\\sdk\\7.0.317\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2073,7 +2074,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.317\\RuntimeIdentifierGraph.json"
       }
     }
   }
